@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Tuwaiq Project</title>
+    <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link
+    
+
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
@@ -13,6 +17,31 @@
     />
 
     <style>
+      /* background for body square with lines */
+      body::before {
+                --size: 120px;
+                --line: color-mix(in lch, canvasText, transparent 90%);
+                content: '';
+                height: 100vh;
+                width: 100vw;
+                position: absolute;
+                background: linear-gradient(90deg,
+                var(--line) 1px,
+                transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
+                linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+                mask: linear-gradient(-20deg, transparent 20%, white);
+                top: 0;
+                transform-style: flat;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+     /* for backgroound ul in navbar */
+        #ul-list{
+            background-color: rgb(250 250 250 );
+            height: 7vh;
+        }
+
       .purpleColor {
         --bg-purple: #4931af;
         background-color: var(--bg-purple);
@@ -41,21 +70,6 @@
         background-color: #ffdde1;
       }
 
-      .text-purple {
-        color: #4f29b7;
-      }
-
-      .text-teal {
-        color: #00877d;
-      }
-
-      .text-pink {
-        color: #ff536d;
-      }
-
-      .text-dark-gray {
-        color: #5c5c5c;
-      }
 
       .btn-start {
         background-color: white;
@@ -80,53 +94,54 @@
     </style>
   </head>
   <body>
-    <header class="header pt-4 container-fluid" dir="rtl">
-      <nav
-        class="nav-content d-flex align-items-center justify-content-between"
-      >
-        <div class="logo">
-          <img
-            src="./images/logo-h.png"
-            class="img-fluid"
-            style="height: 80px; width: 150px"
-            alt=""
-            srcset=""
-          />
-        </div>
 
-        <ul class="nav mx-5 d-flex justify-content-center flex-grow-1 fs-6">
-          <li class="nav-item">
-            <a class="nav-link active purpleColor" aria-current="page" href="#"
-              >الرئيسية</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">حول الأكاديمية</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">الأكاديميات التابعة</a>
-          </li>
-          <span>|</span>
-          <li class="nav-item">
-            <a class="nav-link" href="#">مركز الاختبارات</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">الشراكات</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">الاعتمادات</a>
-          </li>
-          <span>|</span>
-          <li class="nav-item p-2">
-            <a class="nav-link EnglishPage" href="#">En</a>
-          </li>
-        </ul>
 
-        <div class="register-btn">
-          <button class="active purpleColor">تسجيل الدخول</button>
+    <!--Navbar Responsive -->
+    <header class="pt-2  container-fluid" dir="rtl">
+      <nav class="navbar  navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+    
+
+          <a class="navbar-brand" href="#">
+            <img src="./images/logo-h.png" alt="Logo" class="img-fluid" style="height: 80px; width: 150px;">
+          </a>
+    
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- عناصر القائمة -->
+          <div class="collapse navbar-collapse " id="mainNav">
+
+            <!--ul list-->
+            <ul class="navbar-nav mx-auto text-center rounded-4 p-2 fs-6 fw-medium  gap-4 d-flex align-items-center" id="ul-list">
+              <li class="nav-item">
+                <a class="nav-link active purpleColor" aria-current="page" href="#">الرئيسية</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">حول الأكاديمية</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">الأكاديميات التابعة</a></li>
+              <li class="nav-item d-none d-lg-block text-muted">|</li>
+              <li class="nav-item"><a class="nav-link" href="#">مركز الاختبارات</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">الشراكات</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">الاعتمادات</a></li>
+              <li class="nav-item d-none d-lg-block text-muted">|</li>
+              <li class="nav-item">
+                <a class="nav-link EnglishPage" href="#">En</a>
+              </li>
+            </ul>
+            <!--//ul list//-->
+            <div class="text-center mt-3 mt-lg-0 ms-lg-3">
+                <button class="btn purpleColor">تسجيل الدخول</button>
+              </div>
+
+          </div>
+     
         </div>
+      
       </nav>
     </header>
+ <!--//Navbar Responsive //-->
 
     <!--Section 1-->
     <section dir="rtl">
@@ -333,12 +348,12 @@
                       المسار التأسيسي
                     </h2>
                   </div>
-                  <a
+                  <!-- <a
                     href="https://tuwaiq.edu.sa/bootcamp/3APj5WXE/view"
                     target="_blank"
                     class="btn register-now py-1 px-3 d-flex align-items-center"
-                  >
-                    <span class="small fw-medium">سجل الآن</span>
+                  > -->
+                    <span class="small btn btn-danger rounded-4 fw-medium">سجل الآن</span>
                     <svg
                       class="ms-2"
                       width="11"
