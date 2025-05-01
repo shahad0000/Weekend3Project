@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Tuwaiq Clone</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Tuwaiq Project</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .purpleColor {
+        --bg-purple: #4931af;
+        background-color: var(--bg-purple);
+        --color-white: rgb(255, 255, 255);
+        color: var(--color-white) !important;
+      }
+
+      .EnglishPage {
+        --en-bg: #e3d8ff;
+        background-color: var(--en-bg);
+        color: #333;
+        border-radius: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header pt-1" dir="rtl">
+      <nav
+        class="nav-content d-flex align-items-center justify-content-between"
+      >
+        <div class="logo">
+          <img
+            src="./images/logo-h.png"
+            class="img-fluid"
+            style="height: 80px; width: 150px"
+            alt=""
+            srcset=""
+          />
+        </div>
+
+        <ul class="nav mx-5 d-flex justify-content-center flex-grow-1 fs-6">
+          <li class="nav-item">
+            <a
+              class="nav-link active purpleColor rounded-pill"
+              aria-current="page"
+              href="#"
+              >الرئيسية</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">حول الأكاديمية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">الأكاديميات التابعة</a>
+          </li>
+          <span>|</span>
+          <li class="nav-item">
+            <a class="nav-link" href="#">مركز الاختبارات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">الشراكات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">الاعتمادات</a>
+          </li>
+          <span>|</span>
+          <li class="nav-item p-2">
+            <a class="nav-link EnglishPage" href="#">En</a>
+          </li>
+        </ul>
+
+        <!-- زر تسجيل الدخول أقصى اليسار -->
+        <div class="register-btn">
+          <button class="rounded-pill active purpleColor">تسجيل الدخول</button>
+        </div>
+      </nav>
+    </header>
+  </body>
 </html>
