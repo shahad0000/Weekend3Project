@@ -203,6 +203,128 @@ body {
     }
 }
 
+
+/* Courses */
+
+.course-card {
+    border-radius: 1rem;
+    transition: box-shadow 0.3s;
+    min-height: 470px;
+    background: linear-gradient(to bottom right, #F6F8FE, white);
+    border: 1px solid #DBD3F9;
+}
+
+.course-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-container {
+    background: white;
+    border-radius: 1rem;
+    border: 1px solid #DBD3F9;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.newest-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #D8EDF7;
+    color: #4DC0DA;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.path-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #6635D733;
+    color: #6635D7;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.card-image {
+    width: 100%;
+    height: 12rem;
+    object-fit: contain;
+}
+
+.start-button {
+    background: linear-gradient(to right, #f1627a, #d54bae);
+    color: white;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    transition: opacity 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.start-button:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+.skill-intermediate {
+    color: #3b82f6;
+}
+
+.subscribers {
+    color: #FFC653;
+}
+
+.duration {
+    color: #4BC4A6;
+}
+
+.duration-dot {
+    color: #4BC4A6;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.courses-container {
+    overflow-x: auto;
+}
+
+.scroll-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .card-wrapper {
+        min-width: 300px;
+        max-width: 450px;
+    }
+}
+
+
+
+/* For Webkit browsers scrollbar */
+.courses-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.courses-container::-webkit-scrollbar-track {
+    background: #F6F8FE;
+}
+
+.courses-container::-webkit-scrollbar-thumb {
+    background-color: #DBD3F9;
+    border-radius: 20px;
+}
+
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     .cards-container {
