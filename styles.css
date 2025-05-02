@@ -68,6 +68,14 @@ footer {
     footer {
         height: 29vh;
     }
-
-    
+    .col-md-4 {
+        width: 30%;
+    }
+    .fs-md-2 {
+        font-size: large;
+    }
+   .acad-location {
+        height: 250px;
+    }
 }
+
