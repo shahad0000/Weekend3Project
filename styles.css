@@ -509,3 +509,77 @@ body {
 .scroll-btn:hover {
     background-color: #dddddd;
 }
+
+/* img for section 6 */
+
+.news-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+  }
+  .horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .news-card {
+    flex: 0 0 80%;
+    max-width: 80%;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  @media (max-width: 576px) {
+    .news-card {
+      flex: 0 0 90%;
+      max-width: 90%;
+    }
+  
+    .news-title {
+      font-size: 1rem;
+    }
+  
+    .news-footer {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+
+.news-card {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+  
+  .horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+  }
+  
+  .news-card {
+    flex: 0 0 90%;  
+    max-width: 90%;
+  }
+  
+
+  @media (min-width: 768px) {
+    .news-card {
+      flex: 0 0 45%;
+      max-width: 45%;
+    }
+  }
+  
+
+  @media (min-width: 992px) {
+    .news-card {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+  }
