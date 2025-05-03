@@ -1,18 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Tuwaiq Project</title>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <title>Tuwaiq Clone</title>
+    <style>
+      /* background for body square with lines */
+      body::before {
+        --size: 120px;
+        --line-color: rgba(0, 0, 0, 0.05);
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+              to right,
+              var(--line-color) 1px,
+              transparent 1px
+            )
+            repeat,
+          linear-gradient(to bottom, var(--line-color) 1px, transparent 1px)
+            repeat;
+        background-size: var(--size) var(--size);
+        mask-image: linear-gradient(-20deg, transparent 20%, white);
+        pointer-events: none;
+        z-index: -1;
+      }
+      /* for backgroound ul in navbar */
 
+      .blur-navbar{
+        backdrop-filter: blur(10px);
+        background-color: #b1aeae18;
+      }
+
+      #ul-list {
+        background-color: rgb(250 250 250);
+
+        a {
+          border-radius: 40px;
+        }
+      }
+
+      #ul-list a:hover {
+        background-color: #9597979f;
+        transition: 0.3s ease-in-out;
+      }
+      .purpleColor {
+        --bg-purple: #4833a6;
+        background-color: var(--bg-purple);
+        --color-white: rgb(255, 255, 255);
+        color: var(--color-white) !important;
+        border-radius: 10px !important;
+      }
+      .purpleColor:hover {
+        background-color: #6346e6 !important;
+      }
+      .EnglishPage {
+        --en-bg: #e3d8ff;
+        background-color: var(--en-bg);
+        color: #333;
+        border-radius: 10px;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .bg-purple-light {
+        background-color: #e7ddff;
+      }
+
+      .bg-teal-light {
+        background-color: #bffffa;
+      }
+
+      .bg-pink-light {
+        background-color: #ffdde1;
+      }
+
+      .btn-start {
+        background-color: white;
+        color: #4f29b7;
+        border: 2px solid #4f29b7;
+        box-shadow: 5px 5px 0px #4f29b7;
+        transition: all 0.2s;
+        border-radius: 0.75rem;
+      }
+
+      .btn-start:hover {
+        box-shadow: none;
+        color: #4f29b7;
+      }
+
+      .card-bg-grey {
+        background-color: #f5f5f7;
+      }
+      /* 
+        
+    .card-item {
+        background-color: rgba(255, 255, 255, 0.65);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+        border-radius: 0.5rem;
+    }  */
+    </style>
   </head>
   <body>
     <!--Navbar Responsive -->
-    <header class="pt-2 container-fluid  " dir="rtl">
+    <header class="pt-2 mb-4 container-fluid  " dir="rtl">
       <nav class="navbar navbar-expand-lg ">
         <div
           class="container-fluid d-flex align-items-center justify-content-between blur-navbar fixed-top "
@@ -46,12 +149,12 @@
               id="ul-list"
             >
               <li class="nav-item">
-                <a class="nav-link purpleColor" aria-current="page" href="index.html"
+                <a class="nav-link purpleColor" aria-current="page" href="#"
                   >الرئيسية</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">حول الأكاديمية</a>
+                <a class="nav-link" href="#">حول الأكاديمية</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">الأكاديميات التابعة</a>
@@ -61,7 +164,7 @@
                 <a class="nav-link" href="#">مركز الاختبارات</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="partnerships.html">الشراكات</a>
+                <a class="nav-link" href="#">الشراكات</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">الاعتمادات</a>
@@ -83,190 +186,771 @@
 
     <!--Section 1-->
     <section dir="rtl">
-        <div class="container py-5">
-            <div class="row" id="appContainer">
-                <div class="col-md-8 position-relative">
-                    <div class="card border-0 rounded-4 h-100 bg-purple-light position-relative overflow-hidden">
-                        <div class="card-body">
-                            <!-- Mountain Image -->
-                            <img class="mountain-img img-fluid" src="./images/heroBg.png" alt="Tuwaiq Mountain" />
+      <div class="container py-5">
+        <div class="row" >
+          <!--For learn Tech Section-->
+          <div class="col-md-6  ">
+            <div class="card col-md-12 border-0 rounded-4 bg-purple-light">
+              <div class="card-body">
+                <!-- Mountain Image -->
+                <img
+                  class="mountain-img img-fluid"
+                  src="./images/heroBg.png"
+                  alt="Tuwaiq Mountain"
+                />
 
-                            <div class="row">
-                                <div class="col-xl-8 col-lg-10 col-12 ms-auto mb-4">
-                                    <h1 class="text-purple display-5 fw-bold mb-2">
-                                        تعلم تقنيات المستقبل
-                                    </h1>
-                                    <h2 class="text-purple h2 fw-bold">
-                                        في مكــــانٍ واحــــــد
-                                    </h2>
-                                </div>
-                            </div>
-
-                            <div class="row mt-3">
-                                <div class="col-xl-8 col-lg-10 col-12 ms-auto">
-                                    <p class="text-dark-gray mb-4">
-                                        معسكرات وبرامج احترافية بالشراكة مع كبرى الجهات العالمية؛
-                                        لتطوير مهاراتك في مجالات التقنيات الحديثة، بمنهجيّة تعلُّم
-                                        قائمة على التطبيقات العملية، ضمن بيئة تعليمية محفزة
-                                        وتنافسية.
-                                    </p>
-                                    <!--Button Start-->
-                                    <button class="btn btn-lg btn-start px-5 py-3 fw-bold">
-                                        ابدأ
-                                        <svg width="28" height="25" viewBox="0 0 28 25" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M10.8125 1.06869C10.8125 0.873836 10.8979 0.68696 11.05 0.549176C11.2021 0.411391 11.4084 0.333984 11.6234 0.333984H15.4078C15.6229 0.333984 15.8292 0.411391 15.9812 0.549176C16.1333 0.68696 16.2188 0.873836 16.2188 1.06869V4.49733C16.2188 4.69218 16.1333 4.87906 15.9812 5.01684C15.8292 5.15463 15.6229 5.23203 15.4078 5.23203H11.6234C11.4084 5.23203 11.2021 5.15463 11.05 5.01684C10.8979 4.87906 10.8125 4.69218 10.8125 4.49733V1.06869Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M11.6219 5.23275C11.4068 5.23275 11.2005 5.31016 11.0485 5.44794C10.8964 5.58573 10.8109 5.7726 10.8109 5.96746L10 5.23275C10.2151 5.23275 10.4213 5.15535 10.5734 5.01756C10.7255 4.87978 10.8109 4.6929 10.8109 4.49805L11.6219 5.23275Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M5.40625 5.96713C5.40625 5.77227 5.49169 5.5854 5.64377 5.44761C5.79585 5.30983 6.00212 5.23242 6.21719 5.23242H10.0016C10.2167 5.23242 10.4229 5.30983 10.575 5.44761C10.7271 5.5854 10.8125 5.77227 10.8125 5.96713V9.39577C10.8125 9.59062 10.7271 9.7775 10.575 9.91528C10.4229 10.0531 10.2167 10.1305 10.0016 10.1305H6.21719C6.00212 10.1305 5.79585 10.0531 5.64377 9.91528C5.49169 9.7775 5.40625 9.59062 5.40625 9.39577V5.96713Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M10 10.1292C10.2151 10.1292 10.4213 10.2066 10.5734 10.3444C10.7255 10.4822 10.8109 10.6691 10.8109 10.8639L11.6219 10.1292C11.4068 10.1292 11.2005 10.0518 11.0485 9.91405C10.8964 9.77626 10.8109 9.58939 10.8109 9.39453L10 10.1292Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M6.21563 10.1292C6.00056 10.1292 5.79429 10.2066 5.64221 10.3444C5.49013 10.4822 5.40469 10.6691 5.40469 10.8639L4.59375 10.1292C4.80882 10.1292 5.01509 10.0518 5.16717 9.91405C5.31925 9.77626 5.40469 9.58939 5.40469 9.39453L6.21563 10.1292Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M0 10.8656C0 10.6707 0.0854386 10.4838 0.237519 10.346C0.3896 10.2083 0.595865 10.1309 0.81094 10.1309H4.59533C4.8104 10.1309 5.01667 10.2083 5.16875 10.346C5.32083 10.4838 5.40627 10.6707 5.40627 10.8656V14.2942C5.40627 14.4891 5.32083 14.6759 5.16875 14.8137C5.01667 14.9515 4.8104 15.0289 4.59533 15.0289H0.81094C0.595865 15.0289 0.3896 14.9515 0.237519 14.8137C0.0854386 14.6759 0 14.4891 0 14.2942V10.8656Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M4.59375 15.0277C4.80882 15.0277 5.01509 15.1051 5.16717 15.2429C5.31925 15.3807 5.40469 15.5675 5.40469 15.7624L6.21563 15.0277C6.00056 15.0277 5.79429 14.9503 5.64221 14.8125C5.49013 14.6747 5.40469 14.4878 5.40469 14.293L4.59375 15.0277Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M5.40625 15.7621C5.40625 15.5672 5.49169 15.3803 5.64377 15.2425C5.79585 15.1047 6.00212 15.0273 6.21719 15.0273H10.0016C10.2167 15.0273 10.4229 15.1047 10.575 15.2425C10.7271 15.3803 10.8125 15.5672 10.8125 15.7621V19.1907C10.8125 19.3855 10.7271 19.5724 10.575 19.7102C10.4229 19.848 10.2167 19.9254 10.0016 19.9254H6.21719C6.00212 19.9254 5.79585 19.848 5.64377 19.7102C5.49169 19.5724 5.40625 19.3855 5.40625 19.1907V15.7621Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M10 19.9261C10.2151 19.9261 10.4213 20.0035 10.5734 20.1413C10.7255 20.2791 10.8109 20.466 10.8109 20.6608L11.6219 19.9261C11.4068 19.9261 11.2005 19.8487 11.0485 19.7109C10.8964 19.5731 10.8109 19.3863 10.8109 19.1914L10 19.9261Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M10.8125 20.6605C10.8125 20.4656 10.8979 20.2788 11.05 20.141C11.2021 20.0032 11.4084 19.9258 11.6234 19.9258H15.4078C15.6229 19.9258 15.8292 20.0032 15.9812 20.141C16.1333 20.2788 16.2188 20.4656 16.2188 20.6605V24.0891C16.2188 24.284 16.1333 24.4709 15.9812 24.6086C15.8292 24.7464 15.6229 24.8238 15.4078 24.8238H11.6234C11.4084 24.8238 11.2021 24.7464 11.05 24.6086C10.8979 24.4709 10.8125 24.284 10.8125 24.0891V20.6605Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M10.8125 10.8656C10.8125 10.6707 10.8979 10.4838 11.05 10.346C11.2021 10.2083 11.4084 10.1309 11.6234 10.1309H15.4078C15.6229 10.1309 15.8292 10.2083 15.9812 10.346C16.1333 10.4838 16.2188 10.6707 16.2188 10.8656V14.2942C16.2188 14.4891 16.1333 14.6759 15.9812 14.8137C15.8292 14.9515 15.6229 15.0289 15.4078 15.0289H11.6234C11.4084 15.0289 11.2021 14.9515 11.05 14.8137C10.8979 14.6759 10.8125 14.4891 10.8125 14.2942V10.8656Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path d="M13.5156 10.1309H18.9219V15.0289H13.5156V10.1309Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M11.6219 15.0277C11.4068 15.0277 11.2005 15.1051 11.0485 15.2429C10.8964 15.3807 10.8109 15.5675 10.8109 15.7624L10 15.0277C10.2151 15.0277 10.4213 14.9503 10.5734 14.8125C10.7255 14.6747 10.8109 14.4878 10.8109 14.293L11.6219 15.0277Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M16.2188 10.8656C16.2188 10.6707 16.3042 10.4838 16.4563 10.346C16.6083 10.2083 16.8146 10.1309 17.0297 10.1309H20.8141C21.0292 10.1309 21.2354 10.2083 21.3875 10.346C21.5396 10.4838 21.625 10.6707 21.625 10.8656V14.2942C21.625 14.4891 21.5396 14.6759 21.3875 14.8137C21.2354 14.9515 21.0292 15.0289 20.8141 15.0289H17.0297C16.8146 15.0289 16.6083 14.9515 16.4563 14.8137C16.3042 14.6759 16.2188 14.4891 16.2188 14.2942V10.8656Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path d="M18.9219 10.1309H24.3281V15.0289H18.9219V10.1309Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                            <path
-                                                d="M21.625 10.8656C21.625 10.6707 21.7104 10.4838 21.8625 10.346C22.0146 10.2083 22.2209 10.1309 22.4359 10.1309H26.2203C26.4354 10.1309 26.6417 10.2083 26.7937 10.346C26.9458 10.4838 27.0313 10.6707 27.0313 10.8656V14.2942C27.0313 14.4891 26.9458 14.6759 26.7937 14.8137C26.6417 14.9515 26.4354 15.0289 26.2203 15.0289H22.4359C22.2209 15.0289 22.0146 14.9515 21.8625 14.8137C21.7104 14.6759 21.625 14.4891 21.625 14.2942V10.8656Z"
-                                                :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'" fill="#4F29B7">
-                                            </path>
-                                        </svg>
-                                    </button>
-
-                                    <!--//Button Start//-->
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Logos Slider -->
-                        <div class="logos-container">
-                            <div class="logos-slide p-1">
-                                <img class="m-1" src="./logos-company-slider/Apple.png"
-                                    style="width: 3%; height: 3vh" />
-
-                                <img class="m-1" src="./logos-company-slider/cn.png" style="width: 3%; height: 3vh" />
-                                <img class="m-1" src="./logos-company-slider/ct.png" style="width: 3%; height: 3vh" />
-                                <img class="m-1" src="./logos-company-slider/ibm.png" style="width: 3%; height: 3vh" />
-                                <img class="m-1" src="./logos-company-slider/meta.png" style="width: 3%; height: 3vh" />
-                                <img class="m-1" src="./logos-company-slider/microsoft.png"
-                                    style="width: 3%; height: 3vh" />
-                                <img class="m-1" src="./logos-company-slider/ac2.png" style="width: 3%; height: 3vh" />
-                            </div>
-                        </div>
-                    </div>
+                <div class="row">
+                  <div class="col-xl-8 col-lg-10 col-12 ms-auto mb-4">
+                    <h1 class="text-purple display-5 fw-bold mb-2">
+                      تعلم تقنيات المستقبل
+                    </h1>
+                    <h2 class="text-purple h2 fw-bold">
+                      في مكــــانٍ واحــــــد
+                    </h2>
+                  </div>
                 </div>
 
-                <!-- Right column with statistics and Holberton program -->
-                <div class="col-md-4 d-flex flex-column gap-4 mt-4 mt-md-0">
-                    <!-- Statistics Card -->
-                    <div class="card border-0 rounded-4 bg-teal-light">
-                        <div class="card-body p-4">
-                            <p class="text-teal fw-medium mb-2">
-                                عدد المسجلين في المعسكرات والبرامج حتى الآن
-                            </p>
-                            <p class="text-teal fs-3 fw-medium mb-0" id="counter">
-                                1,715,405
-                            </p>
-                        </div>
+                <div>
+                  <div>
+                    <p class="text-dark-gray mb-4">
+                      معسكرات وبرامج احترافية بالشراكة مع كبرى الجهات العالمية؛
+                      لتطوير مهاراتك في مجالات التقنيات الحديثة، بمنهجيّة تعلُّم
+                      قائمة على التطبيقات العملية، ضمن بيئة تعليمية محفزة
+                      وتنافسية.
+                    </p>
+                    <!--Button Start-->
+                    <button class="btn btn-lg btn-start px-5 py-3 fw-bold">
+                      ابدأ
+                      <!--for Arrow Button ; ربما امسحه-->
+                      <svg
+                        width="28"
+                        height="25"
+                        viewBox="0 0 28 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.8125 1.06869C10.8125 0.873836 10.8979 0.68696 11.05 0.549176C11.2021 0.411391 11.4084 0.333984 11.6234 0.333984H15.4078C15.6229 0.333984 15.8292 0.411391 15.9812 0.549176C16.1333 0.68696 16.2188 0.873836 16.2188 1.06869V4.49733C16.2188 4.69218 16.1333 4.87906 15.9812 5.01684C15.8292 5.15463 15.6229 5.23203 15.4078 5.23203H11.6234C11.4084 5.23203 11.2021 5.15463 11.05 5.01684C10.8979 4.87906 10.8125 4.69218 10.8125 4.49733V1.06869Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M11.6219 5.23275C11.4068 5.23275 11.2005 5.31016 11.0485 5.44794C10.8964 5.58573 10.8109 5.7726 10.8109 5.96746L10 5.23275C10.2151 5.23275 10.4213 5.15535 10.5734 5.01756C10.7255 4.87978 10.8109 4.6929 10.8109 4.49805L11.6219 5.23275Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M5.40625 5.96713C5.40625 5.77227 5.49169 5.5854 5.64377 5.44761C5.79585 5.30983 6.00212 5.23242 6.21719 5.23242H10.0016C10.2167 5.23242 10.4229 5.30983 10.575 5.44761C10.7271 5.5854 10.8125 5.77227 10.8125 5.96713V9.39577C10.8125 9.59062 10.7271 9.7775 10.575 9.91528C10.4229 10.0531 10.2167 10.1305 10.0016 10.1305H6.21719C6.00212 10.1305 5.79585 10.0531 5.64377 9.91528C5.49169 9.7775 5.40625 9.59062 5.40625 9.39577V5.96713Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M10 10.1292C10.2151 10.1292 10.4213 10.2066 10.5734 10.3444C10.7255 10.4822 10.8109 10.6691 10.8109 10.8639L11.6219 10.1292C11.4068 10.1292 11.2005 10.0518 11.0485 9.91405C10.8964 9.77626 10.8109 9.58939 10.8109 9.39453L10 10.1292Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M6.21563 10.1292C6.00056 10.1292 5.79429 10.2066 5.64221 10.3444C5.49013 10.4822 5.40469 10.6691 5.40469 10.8639L4.59375 10.1292C4.80882 10.1292 5.01509 10.0518 5.16717 9.91405C5.31925 9.77626 5.40469 9.58939 5.40469 9.39453L6.21563 10.1292Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M0 10.8656C0 10.6707 0.0854386 10.4838 0.237519 10.346C0.3896 10.2083 0.595865 10.1309 0.81094 10.1309H4.59533C4.8104 10.1309 5.01667 10.2083 5.16875 10.346C5.32083 10.4838 5.40627 10.6707 5.40627 10.8656V14.2942C5.40627 14.4891 5.32083 14.6759 5.16875 14.8137C5.01667 14.9515 4.8104 15.0289 4.59533 15.0289H0.81094C0.595865 15.0289 0.3896 14.9515 0.237519 14.8137C0.0854386 14.6759 0 14.4891 0 14.2942V10.8656Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M4.59375 15.0277C4.80882 15.0277 5.01509 15.1051 5.16717 15.2429C5.31925 15.3807 5.40469 15.5675 5.40469 15.7624L6.21563 15.0277C6.00056 15.0277 5.79429 14.9503 5.64221 14.8125C5.49013 14.6747 5.40469 14.4878 5.40469 14.293L4.59375 15.0277Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M5.40625 15.7621C5.40625 15.5672 5.49169 15.3803 5.64377 15.2425C5.79585 15.1047 6.00212 15.0273 6.21719 15.0273H10.0016C10.2167 15.0273 10.4229 15.1047 10.575 15.2425C10.7271 15.3803 10.8125 15.5672 10.8125 15.7621V19.1907C10.8125 19.3855 10.7271 19.5724 10.575 19.7102C10.4229 19.848 10.2167 19.9254 10.0016 19.9254H6.21719C6.00212 19.9254 5.79585 19.848 5.64377 19.7102C5.49169 19.5724 5.40625 19.3855 5.40625 19.1907V15.7621Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M10 19.9261C10.2151 19.9261 10.4213 20.0035 10.5734 20.1413C10.7255 20.2791 10.8109 20.466 10.8109 20.6608L11.6219 19.9261C11.4068 19.9261 11.2005 19.8487 11.0485 19.7109C10.8964 19.5731 10.8109 19.3863 10.8109 19.1914L10 19.9261Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M10.8125 20.6605C10.8125 20.4656 10.8979 20.2788 11.05 20.141C11.2021 20.0032 11.4084 19.9258 11.6234 19.9258H15.4078C15.6229 19.9258 15.8292 20.0032 15.9812 20.141C16.1333 20.2788 16.2188 20.4656 16.2188 20.6605V24.0891C16.2188 24.284 16.1333 24.4709 15.9812 24.6086C15.8292 24.7464 15.6229 24.8238 15.4078 24.8238H11.6234C11.4084 24.8238 11.2021 24.7464 11.05 24.6086C10.8979 24.4709 10.8125 24.284 10.8125 24.0891V20.6605Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M10.8125 10.8656C10.8125 10.6707 10.8979 10.4838 11.05 10.346C11.2021 10.2083 11.4084 10.1309 11.6234 10.1309H15.4078C15.6229 10.1309 15.8292 10.2083 15.9812 10.346C16.1333 10.4838 16.2188 10.6707 16.2188 10.8656V14.2942C16.2188 14.4891 16.1333 14.6759 15.9812 14.8137C15.8292 14.9515 15.6229 15.0289 15.4078 15.0289H11.6234C11.4084 15.0289 11.2021 14.9515 11.05 14.8137C10.8979 14.6759 10.8125 14.4891 10.8125 14.2942V10.8656Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M13.5156 10.1309H18.9219V15.0289H13.5156V10.1309Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M11.6219 15.0277C11.4068 15.0277 11.2005 15.1051 11.0485 15.2429C10.8964 15.3807 10.8109 15.5675 10.8109 15.7624L10 15.0277C10.2151 15.0277 10.4213 14.9503 10.5734 14.8125C10.7255 14.6747 10.8109 14.4878 10.8109 14.293L11.6219 15.0277Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M16.2188 10.8656C16.2188 10.6707 16.3042 10.4838 16.4563 10.346C16.6083 10.2083 16.8146 10.1309 17.0297 10.1309H20.8141C21.0292 10.1309 21.2354 10.2083 21.3875 10.346C21.5396 10.4838 21.625 10.6707 21.625 10.8656V14.2942C21.625 14.4891 21.5396 14.6759 21.3875 14.8137C21.2354 14.9515 21.0292 15.0289 20.8141 15.0289H17.0297C16.8146 15.0289 16.6083 14.9515 16.4563 14.8137C16.3042 14.6759 16.2188 14.4891 16.2188 14.2942V10.8656Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M18.9219 10.1309H24.3281V15.0289H18.9219V10.1309Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                        <path
+                          d="M21.625 10.8656C21.625 10.6707 21.7104 10.4838 21.8625 10.346C22.0146 10.2083 22.2209 10.1309 22.4359 10.1309H26.2203C26.4354 10.1309 26.6417 10.2083 26.7937 10.346C26.9458 10.4838 27.0313 10.6707 27.0313 10.8656V14.2942C27.0313 14.4891 26.9458 14.6759 26.7937 14.8137C26.6417 14.9515 26.4354 15.0289 26.2203 15.0289H22.4359C22.2209 15.0289 22.0146 14.9515 21.8625 14.8137C21.7104 14.6759 21.625 14.4891 21.625 14.2942V10.8656Z"
+                          :fill="theme === 'founding_day' ? '#684F46' : '#4F29B7'"
+                          fill="#4F29B7"
+                        ></path>
+                      </svg>
+                      <!--//for image Arrow Button ; ربما امسحه / //-->
+                    </button>
+
+                    <!--//Button Start//-->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Logos Slider -->
+              <div class="logos-container">
+                <div class="logos-slide p-1">
+                  <img
+                    class="m-1"
+                    src="./logos-company-slider/Apple.png"
+                    style="width: 3%; height: 3vh"
+                  />
+
+                  <img
+                    class="m-1"
+                    src="./logos-company-slider/cn.png"
+                    style="width: 3%; height: 3vh"
+                  />
+                  <img
+                    class="m-1"
+                    src="./logos-company-slider/ct.png"
+                    style="width: 3%; height: 3vh"
+                  />
+                  <img
+                    class="m-1"
+                    src="./logos-company-slider/ibm.png"
+                    style="width: 3%; height: 3vh"
+                  />
+                  <img
+                    class="m-1"
+                    src="./logos-company-slider/meta.png"
+                    style="width: 3%; height: 3vh"
+                  />
+                  <img
+                    class="m-1"
+                    src="./logos-company-slider/microsoft.png"
+                    style="width: 3%; height: 3vh"
+                  />
+                  <img
+                    class="m-1"
+                    src="./logos-company-slider/ac2.png"
+                    style="width: 3%; height: 3vh"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--//For learn Tech Section//-->
+
+          <!-- Right column with statistics and Holberton program -->
+          <!--قابل للاعادة الاستخدام سوف استخدمه لاحقا-->
+          <div class="col-md-6 d-flex flex-column gap-4 mt-4 mt-md-0">
+            <!-- Statistics Card -->
+            <div class="card border-0 rounded-4 bg-teal-light">
+              <div class="card-body p-4">
+                <p class="text-teal fw-medium mb-2">
+                  عدد المسجلين في المعسكرات والبرامج حتى الآن
+                </p>
+                <p class="text-teal fs-3 fw-medium mb-0" id="counter">
+                  1,715,405
+                </p>
+              </div>
+            </div>
+            <!--//قابل للاعادة الاستخدام سوف استخدمه لاحقا//-->
+            <!-- //Right column with statistics and Holberton program// -->
+
+            <!-- Holberton Program Card -->
+            <div
+              class="card border-0 rounded-4 bg-pink-light h-100 position-relative overflow-hidden"
+            >
+              <div class="card-body p-4">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div>
+                    <h2 class="text-pink fs-4 fw-semibold lh-sm">
+                      هولبيرتون <br />
+                      المسار التأسيسي
+                    </h2>
+                  </div>
+                  <span class="small btn btn-danger rounded-4 fw-medium"
+                    >سجل الآن</span
+                  >
+                </div>
+
+                <p class="text-dark-gray small mb-4">
+                  المسار التأسيسي لأكاديمية هولبيرتون العالمية الأولى في الشرق
+                  الأوسط
+                </p>
+
+                <!-- Holberton Image -->
+                <div
+                  class="position-absolute start-50 bottom-0 translate-middle-x rounded-4 p-2 bg-white bg-opacity-50"
+                >
+                  <div class="position-relative w-75 mx-auto mt-5 mb-3">
+                    <img
+                      src="./images/holberton.png"
+                      alt="Holberton by Tuwaiq Academy"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+
+                <!-- Tech Items -->
+                <div class="d-flex justify-content-between mt-4 gap-2">
+                  <div
+                    class="card-item rotate-3 p-3 d-flex justify-content-center align-items-center"
+                  >
+                    <img
+                      src="./holbertonImages/6.svg"
+                      alt="Laptop"
+                      style="width: 55px; height: 58px"
+                    />
+                  </div>
+                  <div
+                    class="card-item translate-y-negative p-3 d-flex justify-content-center align-items-center"
+                  >
+                    <img
+                      src="./holbertonImages/11.svg"
+                      alt="VR Headset"
+                      style="width: 80px; height: 57px"
+                    />
+                  </div>
+                  <div
+                    class="card-item rotate-negative-3 p-3 d-flex justify-content-center align-items-center"
+                  >
+                    <img
+                      src="./holbertonImages/1.svg"
+                      alt="Keyboard"
+                      style="width: 108px; height: 57px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--//Section 1//-->
+
+    <!--Section 2-->
+    <section dir="rtl">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="d-flex justify-content-center">
+            <div class="col-md-9 col-lg-10 cards-container">
+              <!-- Bootcamps Card -->
+              <div class="card-custom bootcamps-card ">
+                <div class="title-and-link">
+                  <h1 class="card-title">المعسكرات</h1>
+                  <a class="round-link position-relative" href="#">
+                    <span class="link-text">المزيد</span>
+                    <svg
+                      class="link-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24"
+                      width="18"
+                      viewBox="0 0 384 512"
+                    >
+                      <path
+                        d="M48 96c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-185.4L324.7 411.3c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L86.6 128 272 128c8.8 0 16-7.2 16-16s-7.2-16-16-16L48 96z"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+                <p class="card-description">
+                  معسكرات منتهية بالتوظيف للمتميزين، مبنيّة على احتياجات سوق
+                  العمل، تقام لمدة 1-9 أشهر بشهادات احترافية في العديد من
+                  المجالات التقنية.
+                </p>
+                <div class="img-container">
+                  <img src="./images/bootcampsImg.png" alt="Bootcamps Image" />
+                </div>
+              </div>
+
+              <!-- Programs Card -->
+              <div class="card-custom programs-card">
+                <div class="title-and-link">
+                  <h1 class="card-title">البرامج</h1>
+                  <a class="round-link position-relative" href="#">
+                    <span class="link-text">المزيد</span>
+                    <svg
+                      class="link-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24"
+                      width="18"
+                      viewBox="0 0 384 512"
+                    >
+                      <path
+                        d="M48 96c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-185.4L324.7 411.3c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L86.6 128 272 128c8.8 0 16-7.2 16-16s-7.2-16-16-16L48 96z"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+                <p class="card-description">
+                  برامج احترافية لمدة 1-3 أسابيع، تستهدف تطوير قدراتك التقنية؛
+                  بمنهجيّة تعلُّم نوعية، وبيئة تنافسية قائمة على التطبيقات
+                  العملية.
+                </p>
+                <div class="img-container">
+                  <img
+                    src="./images/art_for_programs copy.svg"
+                    alt="Programs Image"
+                  />
+                </div>
+              </div>
+
+              <!-- Webinars Card -->
+              <div class="card-custom webinars-card">
+                <div class="title-and-link">
+                  <h1 class="card-title">اللقاءات</h1>
+                  <a class="round-link position-relative" href="#">
+                    <span class="link-text">المزيد</span>
+                    <svg
+                      class="link-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24"
+                      width="18"
+                      viewBox="0 0 384 512"
+                    >
+                      <path
+                        d="M48 96c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-185.4L324.7 411.3c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L86.6 128 272 128c8.8 0 16-7.2 16-16s-7.2-16-16-16L48 96z"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+                <p class="card-description">
+                  لقاءات معرفيّة إثرائية، تقام بالتعاون مع عدة جهات رائدة
+                  ومتقدمة؛ لمناقشة مختلف مواضيع التقنيات الحديثة، والتواصل،
+                  والأعمال.
+                </p>
+                <div class="img-container">
+                  <img src="./images/events.svg" alt="Webinars Image" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--//Section 2//-->
+
+    <!--Section 3-->
+    <section dir="rtl">
+      <div class="container-fluid py-4">
+        <!--For containet header of S3-->
+        <div class="row mb-4 align-items-center">
+          <!--Infos-->
+          <div class="col-md-8">
+            <div class="d-flex align-items-center">
+              <h2 class="section-title mb-0">ينتهي التسجيل قريبًا</h2>
+              <a href="#" class="view-more me-4 d-flex align-items-center">
+                عرض المزيد
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="me-2"
+                >
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="m15 5l-6 7l6 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!--//Infos//-->
+          <!--Buttons Arrows-->
+          <div class="col-md-4 d-none d-md-flex justify-content-end">
+            <button
+              class="btn btn-light rounded-circle me-2"
+              aria-label="Previous"
+            >
+              <img
+                src="./arrows/arrow_forward_ios_24dp_000000_FILL0_wght400_GRAD0_opsz24.png"
+                alt=""
+                srcset=""
+              />
+            </button>
+            <button class="btn btn-light rounded-circle" aria-label="Next">
+              <img
+                src="./arrows/arrow_back_ios_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"
+                alt=""
+                srcset=""
+              />
+            </button>
+          </div>
+          <!--Buttons Arrows-->
+        </div>
+        <!--//For containet header of S3//-->
+
+        <div class="carousel-container pb-4">
+          <div class="row flex-nowrap">
+            <!-- Program Card 1 -->
+            <div class="col-10 col-md-6 col-lg-4 col-xl-3">
+              <a href="/bootcamp/BgyeayNw/view" class="text-decoration-none">
+                <div class="program-card p-4">
+                  <div class="program-image-container mb-3">
+                    <img
+                      src="https://cdn.tuwaiq.edu.sa/initiatives_admin/images/fyslu0tm.5x3.png"
+                      alt="Program Image"
+                      class="program-image"
+                    />
+                  </div>
+                  <div class="card-content">
+                    <p class="card-category mb-1">البرامج التنفيذية</p>
+                    <h3 class="card-title mb-3">برنامج Excel للمبتدئين</h3>
+                    <div class="d-flex mb-3 gap-3">
+                      <p class="card-meta mb-0">برنامج - أسبوع</p>
+                      <p class="card-meta mb-0">كبار</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <div class="status-indicator status-open me-2"></div>
+                      <p class="status-text-open mb-0">ينتهي بعد غد</p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </a>
+            </div>
+            <div class="col-10 col-md-6 col-lg-4 col-xl-3">
+              <a href="/bootcamp/BgyeayNw/view" class="text-decoration-none">
+                <div class="program-card p-4">
+                  <div class="program-image-container mb-3">
+                    <img
+                      src="https://cdn.tuwaiq.edu.sa/initiatives_admin/images/fyslu0tm.5x3.png"
+                      alt="Program Image"
+                      class="program-image"
+                    />
+                  </div>
+                  <div class="card-content">
+                    <p class="card-category mb-1">البرامج التنفيذية</p>
+                    <h3 class="card-title mb-3">برنامج Excel للمبتدئين</h3>
+                    <div class="d-flex mb-3 gap-3">
+                      <p class="card-meta mb-0">برنامج - أسبوع</p>
+                      <p class="card-meta mb-0">كبار</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <div class="status-indicator status-open me-2"></div>
+                      <p class="status-text-open mb-0">ينتهي بعد غد</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-10 col-md-6 col-lg-4 col-xl-3">
+              <a href="/bootcamp/BgyeayNw/view" class="text-decoration-none">
+                <div class="program-card p-4">
+                  <div class="program-image-container mb-3">
+                    <img
+                      src="https://cdn.tuwaiq.edu.sa/initiatives_admin/images/fyslu0tm.5x3.png"
+                      alt="Program Image"
+                      class="program-image"
+                    />
+                  </div>
+                  <div class="card-content">
+                    <p class="card-category mb-1">هندسة الميكاترونكس</p>
+                    <h3 class="card-title mb-3">
+                      أساسيات تصميم اللوحات الإلكترونية (PCB)
+                    </h3>
+                    <div class="d-flex mb-3 gap-3">
+                      <p class="card-meta mb-0">برنامج - أسبوع</p>
+                      <p class="card-meta mb-0">كبار</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <div class="status-indicator status-open me-2"></div>
+                      <p class="status-text-open mb-0">ينتهي غدا</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-10 col-md-6 col-lg-4 col-xl-3">
+              <a href="/bootcamp/BgyeayNw/view" class="text-decoration-none">
+                <div class="program-card p-4">
+                  <div class="program-image-container mb-3">
+                    <img
+                      src="./images/pcb.png"
+                      alt="Program Image"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="card-content">
+                    <p class="card-category mb-1">البرامج التنفيذية</p>
+                    <h3 class="card-title mb-3">برنامج Excel للمبتدئين</h3>
+                    <div class="d-flex mb-3 gap-3">
+                      <p class="card-meta mb-0">برنامج - أسبوع</p>
+                      <p class="card-meta mb-0">كبار</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <div class="status-indicator status-open me-2"></div>
+                      <p class="status-text-open mb-0">ينتهي بعد غد</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-10 col-md-6 col-lg-4 col-xl-3">
+              <a href="/bootcamp/BgyeayNw/view" class="text-decoration-none">
+                <div class="program-card p-4">
+                  <div class="program-image-container mb-3">
+                    <img
+                      src="https://cdn.tuwaiq.edu.sa/initiatives_admin/images/fyslu0tm.5x3.png"
+                      alt="Program Image"
+                      class="program-image"
+                    />
+                  </div>
+                  <div class="card-content">
+                    <p class="card-category mb-1">البرامج التنفيذية</p>
+                    <h3 class="card-title mb-3">برنامج Excel للمبتدئين</h3>
+                    <div class="d-flex mb-3 gap-3">
+                      <p class="card-meta mb-0">برنامج - أسبوع</p>
+                      <p class="card-meta mb-0">كبار</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <div class="status-indicator status-open me-2"></div>
+                      <p class="status-text-open mb-0">ينتهي بعد غد</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Section 3-->
+    
+
+    <!--Section 4-->
+    <section class="py-5 bg-light" dir="rtl">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
+                <h2 class="fs-3 fw-bold mb-3 mb-md-0">أحدث دورات منصة سطر</h2>
+                <a href="#" class="start-button d-none d-md-flex">
+                    ابدأ بالتعلم
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" style="transform: rotate(220deg)" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="courses-container">
+                <div class="scroll-cards">
+                    <!-- Course 1 -->
+                    <div class="card-wrapper col-12 col-md-6 col-lg-4">
+                        <a href="# " class="text-decoration-none text-reset">
+                        
+                            <div class="course-card h-100">
+                                <div class="p-4">
+                                    <div class="card-image-container">
+                                        <span class="newest-tag">احدث الدورات</span>
+                                        <img src="./images/dart104.png" alt="Flutter 103" class="card-image">
+                                    </div>
+                                    <div class="mt-4">
+                                        <h3 class="fs-4 fw-semibold mb-2">Flutter 103</h3>
+                                        <div class="d-flex flex-wrap gap-3 text-muted fs-sm mb-3">
+                                            <div class="d-flex align-items-center gap-1">
+                                                <span class="skill-intermediate">●</span>
+                                                <span>متوسط</span>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-1">
+                                                <span class="subscribers">●</span>
+                                                <span class="subscribers">17976 مشترك</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <span class="duration-dot">•</span>
+                                                <span class="duration">00:56:32</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted mb-4 description">
+                                            تهدف الدورة للتعرف على كيفية بناء واجهات تفاعلية باستخدام أدوات Flutter المتنوعة، والبدء بتخطيط الواجهات باستخدام Stack وExpanded، ثم تحسين تجربة المستخدم من خلال مجموعة أدوات مثل: ListView وGridView، والتعرف على كيفية إضافة أدوات تفاعلية مثل: Gesture Detector لجعل التطبيق أكثر تفاعلًا واستجابة للمستخدم.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
 
-                    <!-- Holberton Program Card -->
-                    <div class="card border-0 rounded-4 bg-pink-light h-100 position-relative overflow-hidden">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <div>
-                                    <h2 class="text-pink fs-4 fw-semibold lh-sm">
-                                        هولبيرتون <br />
-                                        المسار التأسيسي
-                                    </h2>
-                                </div>
-                                <!-- <a
-                    href="https://tuwaiq.edu.sa/bootcamp/3APj5WXE/view"
-                    target="_blank"
-                    class="btn register-now py-1 px-3 d-flex align-items-center"
-                  > -->
-                                <span class="small btn btn-danger rounded-4 fw-medium">سجل الآن</span>
-                                <svg class="ms-2" width="11" height="10" xmlns="http://www.w3.org/2000/svg" fill="white"
-                                    viewBox="0 0 384 512">
-                                    <path
-                                        d="M48 96c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-185.4L324.7 411.3c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L86.6 128 272 128c8.8 0 16-7.2 16-16s-7.2-16-16-16L48 96z">
-                                    </path>
-                                </svg>
-                                </a>
-                            </div>
-
-                            <p class="text-dark-gray small mb-4">
-                                المسار التأسيسي لأكاديمية هولبيرتون العالمية الأولى في الشرق
-                                الأوسط
-                            </p>
-
-                            <!-- Holberton Image -->
-                            <div
-                                class="position-absolute start-50 bottom-0 translate-middle-x w-85 rounded-4 p-2 bg-white bg-opacity-75">
-                                <div class="position-relative w-75 mx-auto mt-5 mb-3">
-                                    <img src="img/Holberton.png" alt="Holberton by Tuwaiq Academy" class="img-fluid" />
+                    <!-- Course 2 -->
+                    <div class="card-wrapper col-12 col-md-6 col-lg-4">
+                        <a href="# " class="text-decoration-none text-reset">
+                            <div class="course-card h-100">
+                                <div class="p-4">
+                                    <div class="card-image-container">
+                                        <span class="newest-tag">احدث الدورات</span>
+                                        <img src="./images/network_security.png" alt="أمن الشبكات 101" class="card-image">
+                                    </div>
+                                    <div class="mt-4">
+                                        <h3 class="fs-4 fw-semibold mb-2">أمن الشبكات 101</h3>
+                                        <div class="d-flex flex-wrap gap-3 text-muted fs-sm mb-3">
+                                            <div class="d-flex align-items-center gap-1">
+                                                <span class="skill-basic">●</span>
+                                                <span>مبتدئ</span>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-1">
+                                                <span class="subscribers">●</span>
+                                                <span class="subscribers">4553 مشترك</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <span class="duration-dot">•</span>
+                                                <span class="duration">01:19:51</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted mb-4 description">
+                                            تهدف دورة أمن الشبكات إلى تزويد المتدربين بالمعرفة والمهارات اللازمة لحماية الشبكات من التهديدات الإلكترونية المتزايدة، من خلال التعرف على تصميم الشبكات الآمنة، بالإضافة إلى تعلم ماهي الأجهزة والأنظمة المستخدمة في تأمين الشبكة ،والتعرف على ادوات الشبكة.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
+                        </a>
+                    </div>
 
-                            <!-- Tech Items -->
-                            <div class="d-flex justify-content-between mt-4 gap-2">
-                                <div class="card-item rotate-3 p-3 d-flex justify-content-center align-items-center">
-                                    <img src="img/6.svg" alt="Laptop" style="width: 55px; height: 58px" />
+                    <!-- Path -->
+                    <div class="card-wrapper col-12 col-md-6 col-lg-4">
+                        <a href="# " class="text-decoration-none text-reset">
+                            <div class="course-card h-100">
+                                <div class="p-4">
+                                    <div class="card-image-container">
+                                        <span class="path-tag">احدث المسارات</span>
+                                        <img src="./images/cs_fundimentals.png" alt="مسار أساسيات الأمن السيبراني" class="card-image">
+                                    </div>
+                                    <div class="mt-4">
+                                        <h3 class="fs-4 fw-semibold mb-2">مسار أساسيات الأمن السيبراني</h3>
+                                        <div class="d-flex flex-wrap gap-3 text-muted fs-sm mb-3">
+                                            <div class="d-flex align-items-center gap-1">
+                                                <span class="skill-basic">●</span>
+                                                <span>مبتدئ</span>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-1">
+                                                <span class="subscribers">●</span>
+                                                <span class="subscribers">2773 مشترك</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <span class="duration-dot">•</span>
+                                                <span class="duration">04:52:21</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted mb-4 description">
+                                            يهدف المسار إلى تقديم رحلة متكاملة تبدأ بمفاهيم الأمن السيبراني الأساسية، ثم إتقان إدارة أنظمة Linux وتوزيعة Kali Linux لأدوات الأمن بعدها، يتعمق في فهم التهديدات والثغرات الأمنية وأساسيات تأمين الشبكات وتقنيات التشفير بأنواعه؛ كما يركز على حماية الأنظمة والتطبيقات، وتنفيذ تكوينات أمنية متوافقة مع المعايير، وتعلُّم حماية البيانات، والاستجابة للحوادث، وانتهاءً بمبادئ الحوكمة وإدارة المخاطر (GRC).
+                                        </p>
+                                    </div>
                                 </div>
-                                <div
-                                    class="card-item translate-y-negative p-3 d-flex justify-content-center align-items-center">
-                                    <img src="img/11.svg" alt="VR Headset" style="width: 80px; height: 57px" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="https://satr.codes/" target="_blank" class="start-button d-inline-flex d-md-none">
+                    ابدأ بالتعلم
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" style="transform: rotate(220deg)" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+    <!--//Section 4//-->
+
+
+    <!--Section 5-->
+    <section class="py-4  card-bg-grey" dir="rtl">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8 col-xxl-10">
+                    <p class="fs-3 fw-bold mb-3 mb-md-0">أرقام الأكاديمية</p>
+                    
+                   <div class="row g-4"> 
+                        <!-- Tall Card -->
+                        <div class="col-12 col-lg-4 bg-white rounded-5">
+                            <div class=" p-4 d-flex flex-column justify-content-between">
+                                <div class="">
+                                    <h1 class="mb-3">شراكة عالمية</h1>
+                                    <h2 class="">+60</h2>
+                                    <span class="">شركة</span>
                                 </div>
-                                <div
-                                    class="card-item rotate-negative-3 p-3 d-flex justify-content-center align-items-center">
-                                    <img src="img/1.svg" alt="Keyboard" style="width: 108px; height: 57px" />
+                                <img src="./images/partnersBg.png" alt="Global Partnerships" class="img-fluid" style="max-width: 120%;">
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-lg-8 ">
+                            <div class="row g-4">
+                                <!-- Top Row Cards -->
+                                <div class="col-12 rounded-4 col-md-6 bg-white m-3" >
+                                    <div class="p-4 d-flex flex-column justify-content-between">
+                                        <div>
+                                            <h1 class=" mb-3">عدد المعسكرات والبرامج</h1>
+                                            <h2 class=" mb-2">1,836</h2>
+                                            <span >معسكر وبرنامج</span>
+                                        </div>
+                                        <img src="./images/count_of_bootcamps.png" alt="Global Partnerships" class="img-fluid" style="max-width: 120%;">
+
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-md-4 bg-white ">
+                                    <div class=" p-4 d-flex flex-column justify-content-between">
+                                        <div>
+                                            <h1 class=" mb-3">عــدد الخريجين</h1>
+                                            <h2 class="mb-2">32,016</h2>
+                                            <span >متدرب حضوري</span>
+                                        </div>
+                                        <img src="./images/count_of_grads.png" alt="Number of Graduates" class="">
+                                    </div>
+                                </div>
+                                
+                                <!-- Bottom Row Cards -->
+                                <div class="col-12 col-md-5 bg-white m-3" >
+                                    <div class="stat-card medium-card p-4 d-flex flex-column justify-content-between">
+                                        <div>
+                                            <h1 class="stat-title mb-3">منــصــة ســـطــر</h1>
+                                            <h2 class="stat-number mb-2">888,542</h2>
+                                            <span class="stat-label">متدرب</span>
+                                        </div>
+                                        <img src="./images/satr_platform.png" alt="Satr Platform" class="">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 col-md-5 bg-white ">
+                                    <div class="stat-card medium-card p-4 d-flex flex-column justify-content-between">
+                                        <div>
+                                            <h1 class="stat-title mb-3">نسبة توظيف خريجي المعسكرات</h1>
+                                            <h2 class="stat-number mb-2">80%</h2>
+                                            <span class="stat-label">موظف</span>
+                                        </div>
+                                        <img src="./images/emp_persentage.png" alt="Employment Rate" >
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -274,175 +958,238 @@
                 </div>
             </div>
         </div>
-
-        <!-- Theme Switcher (Added for functionality) -->
     </section>
 
-    <footer
-      dir="rtl"
-      style="background-color: rgb(227, 215, 255)"
-      class="container-fluid d-flex align-items-center rounded-4 h-md-25"
-    >
-      <div
-        style="width: 100%"
-        class="d-flex flex-column justify-content-center align-items-center"
-      >
-        <div
-          style="width: 99%"
-          class="row justify-content-md-between justify-content-center"
-        >
-          <div class="col-9 col-sm-5 col-md-3 text-center">
-            <img class="w-75" src="images/logo.png" alt="" />
-          </div>
-          <div class="col-12 col-md-3 row d-flex text-center">
-            <a
-              class="col-6 link-underline-light link-underline-opacity-0 my-2 tuwaiq-purple"
-              href="#"
-              >شارك كمدرب</a
-            >
-            <a
-              class="col-6 link-underline-light link-underline-opacity-0 my-2 tuwaiq-purple"
-              href="#"
-              >حول الأكاديمية</a
-            >
-            <a
-              class="col-6 link-underline-light link-underline-opacity-0 my-2 tuwaiq-purple"
-              href="#"
-            >
-              سياسة الخصوصية</a
-            >
-            <a
-              class="col-6 link-underline-light link-underline-opacity-0 my-2 tuwaiq-purple"
-              href="#"
-              >الشروط والأحكام</a
-            >
-          </div>
+
+    <!--Section6-->
+   <section dir="rtl">
+    <div class="container py-5">
+        <div class="row mb-3">
+            <div class="col-12 d-flex justify-content-between align-items-center">
+                
+                <div class="scroll-nav d-none d-md-flex">
+                    <button  class="scroll-btn">
+                        <svg viewBox="0 0 20 20" fill="currentColor" class="h-7 w-7">
+                            <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="scroll-btn">
+                        <svg viewBox="0 0 20 20" fill="currentColor" class="h-7 w-7">
+                            <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                 
+                </div>
+            </div>
         </div>
-
-        <hr style="height: 3px" class="bg-white border-0 w-75" />
-
-        <div
-          dir="ltr"
-          style="width: 95%"
-          class="row justify-content-center justify-content-md-between h-25"
-        >
-          <div class="col-10 col-sm-5 col-md-3 d-flex h-75">
-            <a
-              style="width: 45%"
-              href="https://discord.gg/DWpUH7wFxj"
-              class="text-white"
-            >
-              <svg
-                style="background-color: rgb(79, 41, 183)"
-                width="85%"
-                height="100%"
-                class="rounded-circle p-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 21 16"
-              >
-                <path
-                  d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"
-                ></path>
-              </svg>
-            </a>
-            <a
-              style="width: 30%"
-              href="https://twitter.com/TuwaiqAcademy"
-              class="text-white w-50"
-            >
-              <svg
-                style="background-color: rgb(79, 41, 183)"
-                width="70%"
-                height="100%"
-                class="rounded-circle p-2"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  fill="#ffffff"
-                  d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-                ></path>
-              </svg>
-            </a>
-
-            <a
-              style="width: 45%"
-              href="https://www.youtube.com/channel/UC_pOwgeaVK7bg3z7fJB5N8w"
-              class="text-white w-50"
-            >
-              <svg
-                style="background-color: rgb(79, 41, 183)"
-                width="80%"
-                height="100%"
-                class="rounded-circle p-2"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="#ffffff"
-                  d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"
-                ></path>
-              </svg>
-            </a>
-
-            <a
-              style="width: 45%"
-              href="https://www.snapchat.com/add/tuwaiqacademy"
-              class="text-white w-50"
-            >
-              <svg
-                style="background-color: rgb(79, 41, 183)"
-                width="75%"
-                height="100%"
-                class="rounded-circle p-2"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  fill="#ffffff"
-                  d="M496.9 366.6c-3.4-9.2-9.8-14.1-17.1-18.2-1.4-.8-2.6-1.5-3.7-1.9-2.2-1.1-4.4-2.2-6.6-3.4-22.8-12.1-40.6-27.3-53-45.4a102.9 102.9 0 0 1 -9.1-16.1c-1.1-3-1-4.7-.2-6.3a10.2 10.2 0 0 1 2.9-3c3.9-2.6 8-5.2 10.7-7 4.9-3.2 8.8-5.7 11.2-7.4 9.4-6.5 15.9-13.5 20-21.3a42.4 42.4 0 0 0 2.1-35.2c-6.2-16.3-21.6-26.4-40.3-26.4a55.5 55.5 0 0 0 -11.7 1.2c-1 .2-2.1 .5-3.1 .7 .2-11.2-.1-22.9-1.1-34.5-3.5-40.8-17.8-62.1-32.7-79.2A130.2 130.2 0 0 0 332.1 36.4C309.5 23.5 283.9 17 256 17S202.6 23.5 180 36.4a129.7 129.7 0 0 0 -33.3 26.8c-14.9 17-29.2 38.4-32.7 79.2-1 11.6-1.2 23.4-1.1 34.5-1-.3-2-.5-3.1-.7a55.5 55.5 0 0 0 -11.7-1.2c-18.7 0-34.1 10.1-40.3 26.4a42.4 42.4 0 0 0 2 35.2c4.1 7.8 10.7 14.7 20 21.3 2.5 1.7 6.4 4.2 11.2 7.4 2.6 1.7 6.5 4.2 10.3 6.7a11.1 11.1 0 0 1 3.3 3.3c.8 1.6 .8 3.4-.4 6.6a102 102 0 0 1 -8.9 15.8c-12.1 17.7-29.4 32.6-51.4 44.6C32.4 348.6 20.2 352.8 15.1 366.7c-3.9 10.5-1.3 22.5 8.5 32.6a49.1 49.1 0 0 0 12.4 9.4 134.3 134.3 0 0 0 30.3 12.1 20 20 0 0 1 6.1 2.7c3.6 3.1 3.1 7.9 7.8 14.8a34.5 34.5 0 0 0 9 9.1c10 6.9 21.3 7.4 33.2 7.8 10.8 .4 23 .9 36.9 5.5 5.8 1.9 11.8 5.6 18.7 9.9C194.8 481 217.7 495 256 495s61.3-14.1 78.1-24.4c6.9-4.2 12.9-7.9 18.5-9.8 13.9-4.6 26.2-5.1 36.9-5.5 11.9-.5 23.2-.9 33.2-7.8a34.6 34.6 0 0 0 10.2-11.2c3.4-5.8 3.3-9.9 6.6-12.8a19 19 0 0 1 5.8-2.6A134.9 134.9 0 0 0 476 408.7a48.3 48.3 0 0 0 13-10.2l.1-.1C498.4 388.5 500.7 376.9 496.9 366.6zm-34 18.3c-20.7 11.5-34.5 10.2-45.3 17.1-9.1 5.9-3.7 18.5-10.3 23.1-8.1 5.6-32.2-.4-63.2 9.9-25.6 8.5-42 32.8-88 32.8s-62-24.3-88.1-32.9c-31-10.3-55.1-4.2-63.2-9.9-6.6-4.6-1.2-17.2-10.3-23.1-10.7-6.9-24.5-5.7-45.3-17.1-13.2-7.3-5.7-11.8-1.3-13.9 75.1-36.4 87.1-92.6 87.7-96.7 .6-5 1.4-9-4.2-14.1-5.4-5-29.2-19.7-35.8-24.3-10.9-7.6-15.7-15.3-12.2-24.6 2.5-6.5 8.5-8.9 14.9-8.9a27.6 27.6 0 0 1 6 .7c12 2.6 23.7 8.6 30.4 10.2a10.7 10.7 0 0 0 2.5 .3c3.6 0 4.9-1.8 4.6-5.9-.8-13.1-2.6-38.7-.6-62.6 2.8-32.9 13.4-49.2 26-63.6 6.1-6.9 34.5-37 88.9-37s82.9 29.9 88.9 36.8c12.6 14.4 23.2 30.7 26 63.6 2.1 23.9 .3 49.5-.6 62.6-.3 4.3 1 5.9 4.6 5.9a10.6 10.6 0 0 0 2.5-.3c6.7-1.6 18.4-7.6 30.4-10.2a27.6 27.6 0 0 1 6-.7c6.4 0 12.4 2.5 14.9 8.9 3.5 9.4-1.2 17-12.2 24.6-6.6 4.6-30.4 19.3-35.8 24.3-5.6 5.1-4.8 9.1-4.2 14.1 .5 4.2 12.5 60.4 87.7 96.7C468.6 373 476.1 377.5 462.9 384.9z"
-                ></path>
-              </svg>
-            </a>
-            <a
-              style="width: 45%"
-              href="https://www.linkedin.com/company/tuwaiqacademy"
-              class="text-white w-50"
-            >
-              <svg
-                style="background-color: rgb(79, 41, 183)"
-                width="70%"
-                height="100%"
-                class="rounded-circle p-2"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  fill="#ffffff"
-                  d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
-                ></path>
-              </svg>
-            </a>
-          </div>
-          <div class="col-12 mt-3 my-md-0 col-md-5 text-md-end text-center">
-            <p style="color: rgb(79, 41, 183)">
-              © 2024 أكاديمية طويق. جميع الحقوق محفوظة.
-            </p>
-          </div>
+        
+        <!-- Horizontal scrollable row -->
+        <div class="horizontal-scroll ">
+            <!-- Item 1 -->
+            <div class="news-card">
+                <img src="https://cdn.tuwaiq.edu.sa/landing/news/hg1ea1q1.4at.jpg" alt="News Image">
+                <div class="news-card-overlay">
+                    <h3 class="news-title">إطلاق "أكاديمية الكراج" بالشراكة مع أكاديمية طويق لدعم مشاريع مُسرّعة وحاضنة الكراج
+                    </h3>
+                    <div class="news-footer">
+                        <div class="news-date">03/05/2025</div>
+                        <a href="#" class="read-more-btn">
+                            <span class="btn-text">االمزيد</span>
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" height="24" width="18" viewBox="0 0 384 512">
+                                <path fill="currentColor" d="M48 96c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-185.4L324.7 411.3c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L86.6 128 272 128c8.8 0 16-7.2 16-16s-7.2-16-16-16L48 96z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="news-card">
+                <img src="https://cdn.tuwaiq.edu.sa/landing/news/ce2t3lcl.su1.png" alt="News Image">
+                <div class="news-card-overlay">
+                    <h3 class="news-title">طلاب أكاديمية طويق ومدارس مسك يحصدون 4 ميداليات ذهبية وبرونزية في مسابقة معرض جنيف الدولي للاختراعات
+                    </h3>
+                    <div class="news-footer">
+                        <div class="news-date">29/04/2025</div>
+                        <a href="#" class="read-more-btn">
+                            <span class="btn-text">االمزيد</span>
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" height="24" width="18" viewBox="0 0 384 512">
+                                <path fill="currentColor" d="M48 96c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-185.4L324.7 411.3c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L86.6 128 272 128c8.8 0 16-7.2 16-16s-7.2-16-16-16L48 96z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="news-card">
+                <img src="https://cdn.tuwaiq.edu.sa/landing/news/15mnxx1h.n5k.png" alt="News Image">
+                <div class="news-card-overlay">
+                    <h3 class="news-title">أكاديمية طويق تحتفي بفوز طالباتها في تحدي آبل العالمي
+                    </h3>
+                    <div class="news-footer">
+                        <div class="news-date">25/04/2025</div>
+                        <a href="#" class="read-more-btn">
+                            <span class="btn-text">االمزيد</span>
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" height="24" width="18" viewBox="0 0 384 512">
+                                <path fill="currentColor" d="M48 96c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-185.4L324.7 411.3c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L86.6 128 272 128c8.8 0 16-7.2 16-16s-7.2-16-16-16L48 96z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="news-card">
+                <img src="https://cdn.tuwaiq.edu.sa/landing/news/wdpsjse5.zqv.jpeg" alt="News Image">
+                <div class="news-card-overlay">
+                    <h3 class="news-title">أكاديمية طويق تطلق برنامج قادة تقنيات المستقبل برعاية البرنامج الوطني لتنمية تقنية المعلومات
+                    </h3>
+                    <div class="news-footer">
+                        <div class="news-date">20/04/2025</div>
+                        <a href="#" class="read-more-btn">
+                            <span class="btn-text">االمزيد</span>
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" height="24" width="18" viewBox="0 0 384 512">
+                                <path fill="currentColor" d="M48 96c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-185.4L324.7 411.3c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L86.6 128 272 128c8.8 0 16-7.2 16-16s-7.2-16-16-16L48 96z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-      </div>
-    </footer>
+   </section>
+   
+    <!--Section 6-->
+      
 
 
 
-    <!-- Bootstrap's scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
-        integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
-        crossorigin="anonymous"></script>
-</body>
+
+
+<!--Section 7-->
+<section dir="rtl">
+    <div class="container my-5">
+    <div class="row justify-content-between rounded-4 p-4 p-md-5 bg-info-subtle">
+        <div class="col-md-8">
+            <form>
+                <h2 class="mb-4 mb-md-5 fw-semibold text-primary">اشترك في النشرة البريدية</h2>
+
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <input type="text" class="form-control form-control-lg rounded-4 py-3" id="firstName" placeholder="الاسم الأول" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control form-control-lg rounded-4 py-3" id="lastName" placeholder="الاسم الأخير" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 mb-3 mb-md-0">
+                        <input type="email" class="form-control form-control-lg rounded-4 py-3" id="email" placeholder="name@email.com" required>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn purpleColor btn-lg w-100 rounded-4 py-3 d-flex justify-content-center align-items-center">
+                            اشترك الآن
+                            <svg class="ms-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path fill="currentColor" d="M0 288c0 .7 0 1.3 .1 2c.8 12.2 8.4 22.9 19.6 27.6l112 46.7L160 376l0-8c0-4.2 1.7-8.3 4.7-11.3l13-13c59.6-59.6 119.2-119.2 178.8-178.7c.1-.1 .2-.2 .2-.3c3-3 6.8-4.5 10.7-4.7s7.9 1.1 11 3.9c3.7 3.3 5.6 7.7 5.6 12.1c0 3.4-1.1 6.8-3.3 9.7L224 389.4l0 13.2c20 8.3 40 16.7 60 25c39.9 16.6 79.8 33.2 119.7 49.9c9.1 3.8 19.4 3.2 28-1.6s14.5-13.3 16-23l64-416c1.9-12.1-3.4-24.3-13.5-31.2C492.7 1.9 486.4 0 480 0c-5.5 0-10.9 1.4-15.9 4.2l-448 256C6.1 265.9 0 276.6 0 288z"></path>
+                                <path fill="currentColor" opacity="0.4" d="M380.7 185.8c5.1-6.7 4.2-16.2-2.1-21.8s-15.9-5.3-21.9 .7l-179 179-13 13c-3 3-4.7 7.1-4.7 11.3l0 8 0 56 0 48c0 13.2 8.1 25 20.3 29.8s26.2 1.6 35.2-8.1L284 427.7l-60-25 0-13.2L380.7 185.8z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3 d-none d-md-flex align-items-end justify-content-center">
+            <img src="./arrows/email.svg" alt="Newsletter illustration" class="img-fluid">
+        </div>
+    </div>
+</div>
+</section>
+
+<!--//Section 7//-->
+
+
+<!--Footer -->
+
+<footer dir="rtl" style="background-color: rgb(227, 215, 255);"
+class=" container-fluid d-flex align-items-center rounded-4 h-md-25">
+<div style="width: 100%;" class="d-flex flex-column justify-content-center align-items-center">
+    <div style="width: 99%;" class="row justify-content-md-between justify-content-center">
+        <div class="col-9 col-md-3 text-center">
+            <img class="w-75" src="images/logo.png" alt="">
+        </div>
+        <div class="col-12 col-md-3 row d-flex text-center">
+            <a style="color: rgb(79, 41, 183);" class="col-6 link-underline-light link-underline-opacity-0 my-2" href="#">شارك كمدرب</a>
+            <a style="color: rgb(79, 41, 183);" class="col-6 link-underline-light link-underline-opacity-0 my-2" href="#">حول الأكاديمية</a>
+            <a style="color: rgb(79, 41, 183);" class="col-6 link-underline-light link-underline-opacity-0 my-2" href="#"> سياسة الخصوصية</a>
+            <a style="color: rgb(79, 41, 183);" class="col-6 link-underline-light link-underline-opacity-0 my-2" href="#">الشروط والأحكام</a>
+        </div>           
+    </div>
+
+    <hr style="height: 3px;" class="bg-white border-0 w-75">
+
+    <div dir="ltr" style="width: 95%;" class="row justify-content-center justify-content-md-between h-25">
+        <div class="col-10 col-md-3 d-flex h-75">
+            <a style="width: 45%;" href="https://discord.gg/DWpUH7wFxj" class="text-white ">
+                <svg style="background-color:  rgb(79, 41, 183);" width="85%" height="100%"
+                    class="rounded-circle p-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" viewBox="0 0 21 16">
+                    <path
+                        d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z">
+                    </path>
+                </svg>
+            </a>
+            <a style="width: 30%;" href="https://twitter.com/TuwaiqAcademy" class="text-white w-50">
+                <svg style="background-color: rgb(79, 41, 183);;" width=70% height="100%"
+                    class="rounded-circle p-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="#ffffff"
+                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                    </path>
+                </svg>
+            </a>
+
+            <a style="width: 45%;" href="https://www.youtube.com/channel/UC_pOwgeaVK7bg3z7fJB5N8w"
+                class="text-white w-50">
+                <svg style="background-color: rgb(79, 41, 183);;" width="80%" height="100%"
+                    class="rounded-circle p-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path fill="#ffffff"
+                        d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z">
+                    </path>
+                </svg>
+            </a>
+
+            <a style="width: 45%;" href="https://www.snapchat.com/add/tuwaiqacademy" class="text-white w-50">
+                <svg style="background-color: rgb(79, 41, 183);;" width="75%" height="100%"
+                    class="rounded-circle p-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="#ffffff"
+                        d="M496.9 366.6c-3.4-9.2-9.8-14.1-17.1-18.2-1.4-.8-2.6-1.5-3.7-1.9-2.2-1.1-4.4-2.2-6.6-3.4-22.8-12.1-40.6-27.3-53-45.4a102.9 102.9 0 0 1 -9.1-16.1c-1.1-3-1-4.7-.2-6.3a10.2 10.2 0 0 1 2.9-3c3.9-2.6 8-5.2 10.7-7 4.9-3.2 8.8-5.7 11.2-7.4 9.4-6.5 15.9-13.5 20-21.3a42.4 42.4 0 0 0 2.1-35.2c-6.2-16.3-21.6-26.4-40.3-26.4a55.5 55.5 0 0 0 -11.7 1.2c-1 .2-2.1 .5-3.1 .7 .2-11.2-.1-22.9-1.1-34.5-3.5-40.8-17.8-62.1-32.7-79.2A130.2 130.2 0 0 0 332.1 36.4C309.5 23.5 283.9 17 256 17S202.6 23.5 180 36.4a129.7 129.7 0 0 0 -33.3 26.8c-14.9 17-29.2 38.4-32.7 79.2-1 11.6-1.2 23.4-1.1 34.5-1-.3-2-.5-3.1-.7a55.5 55.5 0 0 0 -11.7-1.2c-18.7 0-34.1 10.1-40.3 26.4a42.4 42.4 0 0 0 2 35.2c4.1 7.8 10.7 14.7 20 21.3 2.5 1.7 6.4 4.2 11.2 7.4 2.6 1.7 6.5 4.2 10.3 6.7a11.1 11.1 0 0 1 3.3 3.3c.8 1.6 .8 3.4-.4 6.6a102 102 0 0 1 -8.9 15.8c-12.1 17.7-29.4 32.6-51.4 44.6C32.4 348.6 20.2 352.8 15.1 366.7c-3.9 10.5-1.3 22.5 8.5 32.6a49.1 49.1 0 0 0 12.4 9.4 134.3 134.3 0 0 0 30.3 12.1 20 20 0 0 1 6.1 2.7c3.6 3.1 3.1 7.9 7.8 14.8a34.5 34.5 0 0 0 9 9.1c10 6.9 21.3 7.4 33.2 7.8 10.8 .4 23 .9 36.9 5.5 5.8 1.9 11.8 5.6 18.7 9.9C194.8 481 217.7 495 256 495s61.3-14.1 78.1-24.4c6.9-4.2 12.9-7.9 18.5-9.8 13.9-4.6 26.2-5.1 36.9-5.5 11.9-.5 23.2-.9 33.2-7.8a34.6 34.6 0 0 0 10.2-11.2c3.4-5.8 3.3-9.9 6.6-12.8a19 19 0 0 1 5.8-2.6A134.9 134.9 0 0 0 476 408.7a48.3 48.3 0 0 0 13-10.2l.1-.1C498.4 388.5 500.7 376.9 496.9 366.6zm-34 18.3c-20.7 11.5-34.5 10.2-45.3 17.1-9.1 5.9-3.7 18.5-10.3 23.1-8.1 5.6-32.2-.4-63.2 9.9-25.6 8.5-42 32.8-88 32.8s-62-24.3-88.1-32.9c-31-10.3-55.1-4.2-63.2-9.9-6.6-4.6-1.2-17.2-10.3-23.1-10.7-6.9-24.5-5.7-45.3-17.1-13.2-7.3-5.7-11.8-1.3-13.9 75.1-36.4 87.1-92.6 87.7-96.7 .6-5 1.4-9-4.2-14.1-5.4-5-29.2-19.7-35.8-24.3-10.9-7.6-15.7-15.3-12.2-24.6 2.5-6.5 8.5-8.9 14.9-8.9a27.6 27.6 0 0 1 6 .7c12 2.6 23.7 8.6 30.4 10.2a10.7 10.7 0 0 0 2.5 .3c3.6 0 4.9-1.8 4.6-5.9-.8-13.1-2.6-38.7-.6-62.6 2.8-32.9 13.4-49.2 26-63.6 6.1-6.9 34.5-37 88.9-37s82.9 29.9 88.9 36.8c12.6 14.4 23.2 30.7 26 63.6 2.1 23.9 .3 49.5-.6 62.6-.3 4.3 1 5.9 4.6 5.9a10.6 10.6 0 0 0 2.5-.3c6.7-1.6 18.4-7.6 30.4-10.2a27.6 27.6 0 0 1 6-.7c6.4 0 12.4 2.5 14.9 8.9 3.5 9.4-1.2 17-12.2 24.6-6.6 4.6-30.4 19.3-35.8 24.3-5.6 5.1-4.8 9.1-4.2 14.1 .5 4.2 12.5 60.4 87.7 96.7C468.6 373 476.1 377.5 462.9 384.9z">
+                    </path>
+                </svg>
+            </a>
+            <a style="width: 45%;" href="https://www.linkedin.com/company/tuwaiqacademy"
+                class="text-white w-50">
+                <svg style="background-color: rgb(79, 41, 183);;" width="70%" height="100%"
+                    class="rounded-circle p-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="#ffffff"
+                        d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+        <div class=" col-12 mt-3 my-md-0 col-md-5 text-md-end text-center">
+            <p style="color: rgb(79, 41, 183);">© 2024 أكاديمية طويق. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+
+<!--//footer//-->
+
+
+
+
+  </body>
 </html>
