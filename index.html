@@ -9,125 +9,167 @@
     <link rel="stylesheet" href="styles.css">
     <title>Tuwaiq Clone</title>
 
+
     <style>
-        /* background for body square with lines */
-        body::before {
-            --size: 120px;
-            --line: color-mix(in lch, canvasText, transparent 90%);
-            content: '';
-            height: 100vh;
-            width: 100vw;
-            position: absolute;
-            background: linear-gradient(90deg,
-                    var(--line) 1px,
-                    transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
-                linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
-            mask: linear-gradient(-20deg, transparent 20%, white);
-            top: 0;
-            transform-style: flat;
-            pointer-events: none;
-            z-index: -1;
-        }
+      /* background for body square with lines */
+      body::before {
+        --size: 120px;
+        --line-color: rgba(0, 0, 0, 0.05);
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+              to right,
+              var(--line-color) 1px,
+              transparent 1px
+            )
+            repeat,
+          linear-gradient(to bottom, var(--line-color) 1px, transparent 1px)
+            repeat;
+        background-size: var(--size) var(--size);
+        mask-image: linear-gradient(-20deg, transparent 20%, white);
+        pointer-events: none;
+        z-index: -1;
+      }
+      /* for backgroound ul in navbar */
 
-        /* for backgroound ul in navbar */
-        #ul-list {
-            background-color: rgb(250 250 250);
-            height: 7vh;
-        }
+      .blur-navbar{
+        backdrop-filter: blur(10px);
+        background-color: #b1aeae18;
+      }
 
-        .purpleColor {
-            --bg-purple: #4931af;
-            background-color: var(--bg-purple);
-            --color-white: rgb(255, 255, 255);
-            color: var(--color-white) !important;
-            border-radius: 10px;
-        }
+      #ul-list {
+        background-color: rgb(250 250 250);
 
-        .EnglishPage {
-            --en-bg: #e3d8ff;
-            background-color: var(--en-bg);
-            color: #333;
-            border-radius: 10px;
-            text-align: center;
-            border-radius: 10px;
+        a {
+          border-radius: 40px;
         }
+      }
 
-        .bg-purple-light {
-            background-color: #e7ddff;
-        }
+      #ul-list a:hover {
+        background-color: #9597979f;
+        transition: 0.3s ease-in-out;
+      }
+      .purpleColor {
+        --bg-purple: #4833a6;
+        background-color: var(--bg-purple);
+        --color-white: rgb(255, 255, 255);
+        color: var(--color-white) !important;
+        border-radius: 10px !important;
+      }
+      .purpleColor:hover {
+        background-color: #6346e6 !important;
+      }
+      .EnglishPage {
+        --en-bg: #e3d8ff;
+        background-color: var(--en-bg);
+        color: #333;
+        border-radius: 10px;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .bg-purple-light {
+        background-color: #e7ddff;
+      }
 
-        .bg-teal-light {
-            background-color: #bffffa;
-        }
+      .bg-teal-light {
+        background-color: #bffffa;
+      }
 
-        .bg-pink-light {
-            background-color: #ffdde1;
-        }
-        .btn-start {
-            background-color: white;
-            color: #4f29b7;
-            border: 2px solid #4f29b7;
-            box-shadow: 5px 5px 0px #4f29b7;
-            transition: all 0.2s;
-            border-radius: 0.75rem;
-        }
-        .btn-start:hover {
-            box-shadow: none;
-            color: #4f29b7;
-        }
-        /*     
-    .card-item {
-        background-color: rgba(255, 255, 255, 0.65);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
-        border-radius: 0.5rem;
-    } */
+      .bg-pink-light {
+        background-color: #ffdde1;
+      }
+
+      .btn-start {
+        background-color: white;
+        color: #4f29b7;
+        border: 2px solid #4f29b7;
+        box-shadow: 5px 5px 0px #4f29b7;
+        transition: all 0.2s;
+        border-radius: 0.75rem;
+      }
+
+      .btn-start:hover {
+        box-shadow: none;
+        color: #4f29b7;
+      }
+
+      .card-bg-grey {
+        background-color: #f5f5f7;
+      }
     </style>
-</head>
-
-<body>
-
+  </head>
+  <body>
     <!--Navbar Responsive -->
-    <header class="pt-2  container-fluid" dir="rtl">
-        <nav class="navbar  navbar-expand-lg">
-            <div class="container-fluid d-flex align-items-center justify-content-between">
+    <header class="pt-2 container-fluid  " dir="rtl">
+      <nav class="navbar navbar-expand-lg ">
+        <div
+          class="container-fluid d-flex align-items-center justify-content-between blur-navbar fixed-top "
+        >
+          <a class="navbar-brand " href="#">
+            <img
+              src="./images/logo-h.png"
+              alt="Logo"
+              class="img-fluid"
+              style="height: 80px; width: 150px"
+            />
+          </a>
 
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <a class="navbar-brand" href="#">
-                    <img src="./images/logo-h.png" alt="Logo" class="img-fluid" style="height: 80px; width: 150px;">
-                </a>
-
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- عناصر القائمة -->
-                <div class="collapse navbar-collapse " id="mainNav">
-                    <!--ul list-->
-                    <ul class="navbar-nav mx-auto text-center rounded-4 p-2 fs-6 fw-medium  gap-4 d-flex align-items-center"
-                        id="ul-list">
-                        <li class="nav-item">
-                            <a class="nav-link active purpleColor" aria-current="page" href="index.html">الرئيسية</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">حول الأكاديمية</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">الأكاديميات التابعة</a></li>
-                        <li class="nav-item d-none d-lg-block text-muted">|</li>
-                        <li class="nav-item"><a class="nav-link" href="#">مركز الاختبارات</a></li>
-                        <li class="nav-item"><a class="nav-link" href="partnerships.html">الشراكات</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">الاعتمادات</a></li>
-                        <li class="nav-item d-none d-lg-block text-muted">|</li>
-                        <li class="nav-item">
-                            <a class="nav-link EnglishPage" href="#">En</a>
-                        </li>
-                    </ul>
-                    <!--//ul list//-->
-                    <div class="text-center mt-3 mt-lg-0 ms-lg-3">
-                        <button class="btn purpleColor">تسجيل الدخول</button>
-                    </div>
-                </div>
+          <!-- عناصر القائمة -->
+          <div class="collapse navbar-collapse" id="mainNav">
+            <!--ul list-->
+            <ul
+              class="navbar-nav mx-auto text-center rounded-4 p-2 fs-6 fw-medium gap-4 d-flex align-items-center"
+              id="ul-list"
+            >
+              <li class="nav-item">
+                <a class="nav-link purpleColor" aria-current="page" href="index.html"
+                  >الرئيسية</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">حول الأكاديمية</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">الأكاديميات التابعة</a>
+              </li>
+              <li class="nav-item d-none d-lg-block text-muted">|</li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">مركز الاختبارات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="partnerships.html">الشراكات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">الاعتمادات</a>
+              </li>
+              <li class="nav-item d-none d-lg-block text-muted">|</li>
+              <li class="nav-item">
+                <a class="nav-link EnglishPage" href="#">En</a>
+              </li>
+            </ul>
+            <!--//ul list//-->
+            <div class="text-center mt-3 mt-lg-0 ms-lg-3">
+              <button class="btn purpleColor">تسجيل الدخول</button>
             </div>
-        </nav>
+          </div>
+        </div>
+      </nav>
     </header>
     <!--//Navbar Responsive //-->
 
